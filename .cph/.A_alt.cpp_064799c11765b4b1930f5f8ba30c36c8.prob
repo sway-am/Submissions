@@ -1,0 +1,1 @@
+{"name":"Local: A_alt","url":"d:\\COMP_PROG_MAIN\\A_alt.cpp","tests":[{"id":1718116319548,"input":"3\n2\n3\n10\n","output":"3\n20 18 \n219 216 \n2218 2214 \n1\n165 162 \n1\n1262 2519 \n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\COMP_PROG_MAIN\\A_alt.cpp","group":"local","local":true}
