@@ -1,4 +1,16 @@
-/*
+// DNB
+// C++
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
+#include <bits/stdc++.h>
+#define nl "\n"
+#define F first
+#define S second
+#define vin(v,n) for(int i = 0; i<n; i++){cin>>v[i];}
+#define all(v) v.begin(), v.end()
+#define space " "
+#define int long long int
+ /*
 We want to find the longest palindromic suffix of a given string s.
 A palindromic suffix is a substring that starts at some index and goes to the end of s, and is also a palindrome.
 
@@ -20,20 +32,17 @@ Efficient method (O(n) time using KMP):
 
 Below is the complete C++ code implementing this logic.
 */
-
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
 using namespace std;
+typedef int ll;
 
-// Function to compute the prefix function (KMP algorithm)
 vector<int> computePrefix(const string &str) {
     int n = str.size();
     vector<int> pi(n, 0);
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; i < n; i++) 
+    {
         int j = pi[i - 1];
-        while (j > 0 && str[i] != str[j]) {
+        while (j > 0 && str[i] != str[j]) 
+        {
             j = pi[j - 1];
         }
         if (str[i] == str[j]) {
@@ -44,30 +53,48 @@ vector<int> computePrefix(const string &str) {
     return pi;
 }
 
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    
-    string s;
-    cin >> s;
+void solve()
+{
+    string s; cin>>s;
     int n = s.size();
-    
-    // Create the reverse of s.
     string t = s;
     reverse(t.begin(), t.end());
-    
-    // Build the combined string: t + '#' + s
+
     string combined = t + "#" + s;
-    
-    // Compute the prefix function for the combined string.
     vector<int> pi = computePrefix(combined);
-    
-    // The last value of pi gives the length of the longest prefix of t that is also a suffix of s.
     int k = pi.back();
-    
-    // The longest palindromic suffix is the last k characters of s.
     string longestPalSuffix = s.substr(n - k, k);
+    // cout<<longestPalSuffix<<nl;
+
+    string ans = "";
+    int ptr = 0;
+    for(int j =n-1 - longestPalSuffix.size(); j >= 0; j--)
+    {   
+         ans += s[j];
+    }
+    // cout<<ans<<nl;
+    string res = s;
+    for(auto it:ans) res += it;
+    cout<<res<<nl;
+
+
+
+
+
     
-    cout << longestPalSuffix << "\n";
-    return 0;
+
+
+}
+
+signed main(){
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  ll t = 1;
+//   cin>>t;
+  while(t--){
+    solve();
+
+
+  }
+  return 0;
 }
