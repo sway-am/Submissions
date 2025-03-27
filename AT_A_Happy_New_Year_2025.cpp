@@ -17,19 +17,16 @@ typedef int ll;
 
 void solve()
 {
-    int a[3] = {1, 1, 1};
-    int b[3] = {2, 2, 2};
-    int c[3]  = a+b;
-
-
+    ll x, y; cin>>x>>y;
+    cout<<(x+y)*(x+y)<<endl;
 
 }
 
 signed main(){
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
-  ll t;
-  cin>>t;
+  ll t = 1;
+//   cin>>t;
   while(t--){
     solve();
 

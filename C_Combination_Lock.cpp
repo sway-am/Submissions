@@ -17,10 +17,26 @@ typedef int ll;
 
 void solve()
 {
-    int a[3] = {1, 1, 1};
-    int b[3] = {2, 2, 2};
-    int c[3]  = a+b;
+    ll n; cin>>n;
+    if(n%2 == 0) {cout<<-1<<nl; return;}
 
+    vector<int>ans;
+    for(int i = 1; i<= n; i++)
+    {
+        ans.push_back(2*i%n);
+    }
+
+    for(int i = 0; i< n; i++)
+    {
+        if(ans[i] == 0)
+        ans[i] = n;
+    }
+
+    for(auto it:ans)
+    {
+        cout<<it<<space;
+    }
+    cout<<nl;
 
 
 }

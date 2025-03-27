@@ -17,19 +17,28 @@ typedef int ll;
 
 void solve()
 {
-    int a[3] = {1, 1, 1};
-    int b[3] = {2, 2, 2};
-    int c[3]  = a+b;
+    ll n; cin>>n;
+    int ans = 0;
+    map<int ,int> mp;
+    for(int i = 1; i<= 9 ; i++)
+    {
+        for(int j = 1; j <= 9; j++)
+        {
+            mp[i*j] ++;
+            ans += i*j;
+        }
+    }
 
-
+    ans -= mp[n]*n;
+    cout<<ans<<nl;
 
 }
 
 signed main(){
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
-  ll t;
-  cin>>t;
+  ll t = 1;
+//   cin>>t;
   while(t--){
     solve();
 

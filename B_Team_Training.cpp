@@ -17,9 +17,29 @@ typedef int ll;
 
 void solve()
 {
-    int a[3] = {1, 1, 1};
-    int b[3] = {2, 2, 2};
-    int c[3]  = a+b;
+    int n, x;
+    cin>>n;cin>>x;
+    vector<int>v(n);
+    vin(v, n);
+    sort(all(v));
+    reverse(all(v));
+
+    int cntr = 0;
+    int ans =0;
+    for(int i =0 ; i< n; i++)
+    {
+        cntr++;
+        if(v[i] * cntr >= x)
+        {
+            ans++;
+            cntr = 0;
+        }
+    }
+
+    cout<<ans<<nl;
+
+    
+
 
 
 
