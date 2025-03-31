@@ -19,7 +19,8 @@ typedef int ll;
     And then make the adj matix of set so you can perform addition and deletion of edges
 
 
-    Each edge is inserted once and removed once, so the total number of edge insertions and deletions across q queries is at most O(n + q).
+    Each edge is inserted once and removed once, so the total number of edge insertions and 
+    deletions across q queries is at most O(n + q).
     Since each insertion or deletion in set is O(log n), the total cost of all operations is:
     𝑂((𝑛+𝑞)log⁡𝑛)
     Thus, the worst-case time complexity of the entire program is:
