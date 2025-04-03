@@ -11,6 +11,7 @@
 #define space " "
 #define int long long int
 const int MOD = 998244353;
+#define INF (ll)1e+15
  
 using namespace std;
 typedef int ll;
