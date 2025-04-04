@@ -20,6 +20,8 @@ typedef int ll;
 
 void solve()
 {
+    ll n; cin>>n; 
+    cout<<2*n<<nl;
 
 
 }
