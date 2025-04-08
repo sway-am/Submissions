@@ -20,7 +20,30 @@ typedef int ll;
 
 void solve()
 {
+    string s; cin>>s;
+    int n = s.length();
+    vector<int>nonzer;
+    int cnt =0 ;
+    for(int i = 0; i< n; i++)
+    {
+        nonzer.push_back(cnt);
+        if(s[i] != '0')
+            cnt++;
+    }
 
+    for(int i =0 ; i < n; i++)
+    {
+        nonzer[i] += (n - i - 1);
+    }
+
+    int ans = INT_MAX;
+    for(int i = 0; i< n; i++)
+    {
+        if(s[i] == '0') continue;
+        ans = min(ans, nonzer[i]);
+    }
+    
+    cout<<ans<<nl;
 
 }
 

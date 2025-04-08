@@ -20,6 +20,9 @@ typedef int ll;
 
 void solve()
 {
+    ll n ; cin>>n; 
+    if(n%2 == 0) cout<<"NO"<<nl;
+    else cout<<"YES"<<nl;
 
 
 }
